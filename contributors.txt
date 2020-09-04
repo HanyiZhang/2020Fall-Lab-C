@@ -7,3 +7,4 @@ Enis Rama
 Samuel Noack
 Alexander Palmisano
 Kerim Karabacak
+Connor Eggert
