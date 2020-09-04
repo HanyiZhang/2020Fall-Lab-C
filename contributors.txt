@@ -1,3 +1,9 @@
 TA: Hanyi Zhang
+<<<<<<< HEAD
 Students
 Jon Kochanik
+=======
+Students:
+Alex Waldron
+Benjamin Mirisola
+>>>>>>> 0d5b69ad75f880439a0238e8a90fd18a101b6202
