@@ -10,6 +10,19 @@
 #include <vector>
 using namespace std;
 
+int sum(int num1, int num2) {
+    int sum = 0;
+    for (int i = num1; i <= num2; i++)
+        sum += i;
+    return sum;
+}
+
+double mean(int[] arr, double len) {
+    int sum = 0;
+    for (int i = 0; i < len; i++)
+        sum += arr[i];
+    return sum/len;
+}
 
 int main() {
 	cout << sum(1, 3) << ' ' << sum(1, 100) << '\n'; // should work no problem, right?
