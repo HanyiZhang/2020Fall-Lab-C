@@ -10,12 +10,18 @@
 #include <vector>
 using namespace std;
 
+/*
+ * Created by Jon Kochanik
+ */
 int sum(int num1, int num2) {
   int sum = 0;
   for (int i = num1; i <= num2; i++) sum += i;
   return sum;
 }
 
+/*
+ *  Created by Jon Kochanik
+ */
 double mean(int[] arr, double len) {
   int sum = 0;
   for (int i = 0; i < len; i++) sum += arr[i];
