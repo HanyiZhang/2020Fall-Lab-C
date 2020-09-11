@@ -32,6 +32,20 @@ int prod(int a, int b){
     return product;
 }
 
+int max(int arr[], double len) {
+    int max = 0;
+    for (int i = 0; i < len; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+
+
+
+
 int main() {
 	cout << sum(1, 3) << ' ' << sum(1, 100) << '\n'; // should work no problem, right?
 	cout << sum(1, 1000000) << '\n'; // what should this be? Don't assume it's right, check!
