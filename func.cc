@@ -24,7 +24,7 @@ double mean(int[] arr, double len) {
     return sum/len;
 }
 
-int product(int a, int b){
+int prod(int a, int b){
     int product = 1;
     for (int i = a; i<=b; i++){
         product *=i;
