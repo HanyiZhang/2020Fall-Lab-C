@@ -56,6 +56,18 @@ double sum(int arr[], int len) {
   return sum;
 }
 
+bool isprime(int x){
+  //isprime - Alex Palmisano
+    for (int i = 2; i <= x/2; i++) {
+            if ( x % i == 0) {
+                cout << x <<" is not a prime number";
+                return false;
+            }
+        }
+        cout << x <<" is a prime number";
+        return true;  
+}
+
 int main() {
   cout << sum(1, 3) << ' ' << sum(1, 100)
        << '\n';  // should work no problem, right?
