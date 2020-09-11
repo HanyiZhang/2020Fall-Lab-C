@@ -24,6 +24,14 @@ double mean(int[] arr, double len) {
     return sum/len;
 }
 
+int product(int a, int b){
+    int product = 1;
+    for (int i = a; i<=b; i++){
+        product *=i;
+    }
+    return product;
+}
+
 int main() {
 	cout << sum(1, 3) << ' ' << sum(1, 100) << '\n'; // should work no problem, right?
 	cout << sum(1, 1000000) << '\n'; // what should this be? Don't assume it's right, check!
