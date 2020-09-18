@@ -114,7 +114,17 @@ bool isprime(int x){
         cout << x <<" is a prime number";
         return true;  
 }
+void print(const double x[], int n) {
+	for (int i = 0; i < n; i++)
+		cout << x[i] << ' ';
+	cout << '\n';
+}
 
+void print(const int x[], int n) {
+	for (int i = 0; i < n; i++)
+		cout << x[i] << ' ';
+	cout << '\n';
+}
 int main() {
   cout << sum(1, 3) << ' ' << sum(1, 100)
        << '\n';  // should work no problem, right?
