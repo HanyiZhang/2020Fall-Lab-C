@@ -179,6 +179,21 @@ void print(const int x[], int n) {
 	for (int i = 0; i < n; i++)
 		cout << x[i] << ' ';
 	cout << '\n';
+
+void demean(double array[], double n) {
+  //Alexander Palmisano
+    double sum = 0;
+    for (int i = 0; i < n; i++){
+        sum = sum + array[i];
+    }
+
+    double mean = sum / n;
+
+    for (int i = 0; i < n; i++){
+        array[i] = array[i] - mean;
+    }
+}
+
 }
 int main() {
   cout << sum(1, 3) << ' ' << sum(1, 100)
