@@ -10,6 +10,24 @@
 #include <vector>
 using namespace std;
 
+//Eugene Kozlakov 9.17.2020
+long double fact (double num){
+  int runFact=1;
+  for (int i=1;i<=num;i++){
+    runFact*=i;
+  }
+  return runFact;
+}
+
+//Eugene Kozlakov 9.17.2020
+int addToEach(int array[], int arraysize, int delta){
+  for(int i=0;i<arraysize;i++){
+   array[i]+= delta;
+  }
+  return *array;
+}
+
+
 /*
  * Created by Jon Kochanik
  */
