@@ -11,6 +11,66 @@
 #include <algorithm>
 using namespace std;
 
+//created by Enis Rama
+void reverse(int a[], int len){
+
+    int temp;
+    for (int i = 0; i < len / 2; i++) 
+    {
+      temp = a[len-i-1];
+      a[len-i-1] = a[i];
+      a[i] = temp;
+    }
+    for (int i = 0; i < len; i++)
+    {
+        cout << a[i] << " ";
+    }
+    cout << "\n";
+
+}
+
+//Created by Enis Rama
+void reverse(char a[]){
+
+    int len = strlen(a); //= sizeof(a)/sizeof(a[0]);
+    int temp;
+
+    for (int i = 0; i < len / 2; i++) 
+    {
+      temp = a[len-i-1];
+      a[len-i-1] = a[i];
+      a[i] = temp;
+    }
+
+}
+
+//Created by Enis Rama
+int diffsq(int a, int b){
+
+    int r1, r2, diffsq;
+    r1 = pow(a, 2);
+    r2 = pow(b, 2);
+    diffsq = r1 - r2;
+    
+    return diffsq;
+}
+    
+
+
+//created by connor eggert
+int gcd(int min, int max) {
+	if (max == 0)
+		return min;
+		return gcd(max, min % max);
+}
+
+
+void round(double array[], int size) {
+	for (int j = 0; j < size; j++) {
+		array[j] = round(array[j]);
+	}
+	
+}
 <<<<<<< HEAD
 	//created by sam noack
 int contPrimes(int x, int y){
@@ -23,13 +83,13 @@ int contPrimes(int x, int y){
       if (isNotPrime == false) {
 	if (x % i == 0) {
 	  isNotPrime = true;
-	  Primes++;
 	  cout <<"this number is NOT a prime : " << x << "\n";
 	  break;
 	}
       }
     }
     if (isNotPrime == false) {
+    	Primes++;
       cout << "this IS a prime number" : << x << "\n";
     }
   }
@@ -123,7 +183,11 @@ int countEvens(int arr[], int arr_size) {
 }
 
 //Isaac Kupferschmid
-int lcm(int a, int b) { lcmAB = a / b *__gcd(a, b) return lcmAB; }
+int lcm(int a, int b) {
+   int lcmAB = 0;
+   lcmAB = ((a*b)/(__gcd(a, b))); 
+   return lcmAB; 
+}
 
 //Eugene Kozlakov 9.17.2020
 long double fact (double num){
@@ -160,16 +224,20 @@ double mean(int[] arr, double len) {
   for (int i = 0; i < len; i++) sum += arr[i];
   return sum / len;
 }
-
+/*
+ * Benjamin Mirisola
+ */
 int prod(int a, int b) {
   int product = 1;
   for (int i = a; i <= b; i++) {
     product *= i;
   }
   return product;
->>>>>>> b6c641feae2dbaa380c76b928bf60ffc76069f94
-}
 
+}
+/*
+ * Benjamin Mirisola
+ */
 int max(int arr[], double len) {
   int max = 0;
   for (int i = 0; i < len; i++) {
@@ -195,7 +263,10 @@ double sum(int arr[], int len) {
   }
   return sum;
 }
-
+//Abhishek
+double hypot(double a, double b) {
+	return sqrt(a*a + b*b);
+}
 bool isprime(int x){
   //isprime - Alex Palmisano
     for (int i = 2; i <= x/2; i++) {
@@ -217,6 +288,21 @@ void print(const int x[], int n) {
 	for (int i = 0; i < n; i++)
 		cout << x[i] << ' ';
 	cout << '\n';
+
+void demean(double array[], double n) {
+  //Alexander Palmisano
+    double sum = 0;
+    for (int i = 0; i < n; i++){
+        sum = sum + array[i];
+    }
+
+    double mean = sum / n;
+
+    for (int i = 0; i < n; i++){
+        array[i] = array[i] - mean;
+    }
+}
+
 }
 int main() {
   cout << sum(1, 3) << ' ' << sum(1, 100)
@@ -296,8 +382,8 @@ int main() {
   cout << "arr sum=" << sum(arr2, 8) << '\n';
 
   cout << "arr compact=";
-  vector<int> compact_result = compact(arr2, 8, 3, 8);
-  for (int i = 0; i < compact_result.size(); i++) {
+  int[8] compact_result = compact(arr2, 8, 3, 8);
+  for (int i = 0; i < 8; i++) {
     cout << compact_result[i] << " ";
   }
   cout << '\n';
