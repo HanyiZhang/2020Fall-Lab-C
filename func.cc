@@ -258,8 +258,8 @@ int main() {
   cout << "arr sum=" << sum(arr2, 8) << '\n';
 
   cout << "arr compact=";
-  vector<int> compact_result = compact(arr2, 8, 3, 8);
-  for (int i = 0; i < compact_result.size(); i++) {
+  int[8] compact_result = compact(arr2, 8, 3, 8);
+  for (int i = 0; i < 8; i++) {
     cout << compact_result[i] << " ";
   }
   cout << '\n';
