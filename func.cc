@@ -85,7 +85,11 @@ int countEvens(int arr[], int arr_size) {
 }
 
 //Isaac Kupferschmid
-int lcm(int a, int b) { lcmAB = a / b *__gcd(a, b) return lcmAB; }
+int lcm(int a, int b) {
+   int lcmAB = 0;
+   lcmAB = ((a*b)/(__gcd(a, b))); 
+   return lcmAB; 
+}
 
 //Eugene Kozlakov 9.17.2020
 long double fact (double num){
