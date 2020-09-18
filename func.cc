@@ -10,6 +10,25 @@
 #include <vector>
 using namespace std;
 
+// 9.18.2020 Isaac Kupferschmid
+// aided by https://www.geeksforgeeks.org/count-number-even-odd-elements-array/
+int countEvens(int arr[], int arr_size) {
+  int even_count = 0;
+  int odd_count = 0;
+
+  // loop to read all the values in the array
+  for (int i = 0; i < arr_size; i++) {
+    // checking if a number is completely
+    // divisible by 2
+    if (arr[i] & 1 == 1)
+      odd_count++;
+    else
+      even_count++;
+  }
+
+  return even_count;
+}
+
 //Eugene Kozlakov 9.17.2020
 long double fact (double num){
   int runFact=1;
