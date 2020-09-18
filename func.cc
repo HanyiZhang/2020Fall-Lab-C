@@ -11,6 +11,39 @@
 #include <algorithm>
 using namespace std;
 
+//created by Enis Rama
+void reverse(int a[], int len){
+
+    int temp;
+    for (int i = 0; i < len / 2; i++) 
+    {
+      temp = a[len-i-1];
+      a[len-i-1] = a[i];
+      a[i] = temp;
+    }
+    for (int i = 0; i < len; i++)
+    {
+        cout << a[i] << " ";
+    }
+    cout << "\n";
+
+}
+
+void reverse(char a[]){
+
+    int len = strlen(a); //= sizeof(a)/sizeof(a[0]);
+    int temp;
+
+    for (int i = 0; i < len / 2; i++) 
+    {
+      temp = a[len-i-1];
+      a[len-i-1] = a[i];
+      a[i] = temp;
+    }
+
+}
+
+
 //created by connor eggert
 int gcd(int min, int max) {
 	if (max == 0)
