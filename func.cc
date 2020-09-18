@@ -29,6 +29,7 @@ void reverse(int a[], int len){
 
 }
 
+//Created by Enis Rama
 void reverse(char a[]){
 
     int len = strlen(a); //= sizeof(a)/sizeof(a[0]);
@@ -42,6 +43,18 @@ void reverse(char a[]){
     }
 
 }
+
+//Created by Enis Rama
+int diffsq(int a, int b){
+
+    int r1, r2, diffsq;
+    r1 = pow(a, 2);
+    r2 = pow(b, 2);
+    diffsq = r1 - r2;
+    
+    return diffsq;
+}
+    
 
 
 //created by connor eggert
