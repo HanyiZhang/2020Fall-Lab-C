@@ -8,6 +8,7 @@
 #include <cstdint>
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 // 9.18.2020 Isaac Kupferschmid
@@ -28,6 +29,9 @@ int countEvens(int arr[], int arr_size) {
 
   return even_count;
 }
+
+//Isaac Kupferschmid
+int lcm(int a, int b) { lcmAB = a / b *__gcd(a, b) return lcmAB; }
 
 //Eugene Kozlakov 9.17.2020
 long double fact (double num){
