@@ -51,6 +51,58 @@ int compact(int x[], int a, int b) {
   }
   return 0;
 =======
+    /*
+ * Created by Amein Almoughrabi
+ */
+double hypot(int A, int B){
+
+    int temp;
+
+    temp = (A * A) + (B * B);
+    return sqrt ( temp );
+    
+}
+int main()
+{
+    
+
+    cout << "hypot(3,4)=" << hypot(3, 4) << '\n';
+    cout << "hypot(4,5)=" << hypot(4, 5) << '\n';
+}
+
+    
+/*
+ * Created by Amein Almoughrabi
+ */
+
+
+double dist(int xone, int yone, int xtwo, int ytwo){
+    int a = xtwo-xone;
+    int b = ytwo-yone;
+    a=a;
+    b*=b;
+    int c = a+b;
+    return sqrt(c);
+}
+
+
+double perimeter(int x1, int y1, int x2, int y2,int x3, int y3){
+    double dis1 = dist(x1, y1, x2, y2);
+    double dis2 = dist(x2, y2, x3, y3);
+    double dis3 = dist(x1, y1, x3, y3);
+ 
+    return dis1+dis2+dis3;
+}
+
+
+int main()
+{
+    cout << "perimeter of tri= " << perimeter(0, 0, 3, 0, 3, 3) << '\n';
+    return 0;
+}
+
+
+========
 // 9.18.2020 Isaac Kupferschmid
 // aided by https://www.geeksforgeeks.org/count-number-even-odd-elements-array/
 int countEvens(int arr[], int arr_size) {
