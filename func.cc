@@ -126,16 +126,20 @@ double mean(int[] arr, double len) {
   for (int i = 0; i < len; i++) sum += arr[i];
   return sum / len;
 }
-
+/*
+ * Benjamin Mirisola
+ */
 int prod(int a, int b) {
   int product = 1;
   for (int i = a; i <= b; i++) {
     product *= i;
   }
   return product;
->>>>>>> b6c641feae2dbaa380c76b928bf60ffc76069f94
-}
 
+}
+/*
+ * Benjamin Mirisola
+ */
 int max(int arr[], double len) {
   int max = 0;
   for (int i = 0; i < len; i++) {
