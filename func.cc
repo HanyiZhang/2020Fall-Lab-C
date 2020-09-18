@@ -10,7 +10,19 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
+int gcd(int min, int max) {
+	if (max == 0)
+		return min;
+		return gcd(max, min % max);
+}
 
+
+void round(double array[], int size) {
+	for (int j = 0; j < size; j++) {
+		array[j] = round(array[j]);
+	}
+	
+}
 <<<<<<< HEAD
 	//created by sam noack
 int contPrimes(int x, int y){
