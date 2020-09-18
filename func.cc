@@ -10,6 +10,44 @@
 #include <vector>
 using namespace std;
 
+int contPrimes(int x, int y){
+  bool isNotPrime = false;
+  int Primes = 0;
+
+  for (x; x <= y; x++){
+    isNotPrime = false;
+    for (int i = 2; i <= x - 1; i++) {
+      if (isNotPrime == false) {
+	if (x % i == 0) {
+	  isNotPrime = true;
+	  Primes++;
+	  cout <<"this number is NOT a prime : " << x << "\n";
+	  break;
+	}
+      }
+    }
+    if (isNotPrime == false) {
+      cout << "this IS a prime number" : << x << "\n";
+    }
+  }
+return Primes;
+}
+
+int compact(int x[], int a, int b) {
+  for (int i = 1; i <= 10; i++) {
+    if (i + 1 >= a && i + 1 <= b) {
+      x[i] = 0;
+    }
+  }
+  for (int i = 0; i <= 9; i++) {
+    if (x[i] == 0) {
+    }
+    else {
+      cout << x[i] << " - ";
+      }
+  }
+  return 0;
+}
 
 int main() {
 	cout << sum(1, 3) << ' ' << sum(1, 100) << '\n'; // should work no problem, right?
