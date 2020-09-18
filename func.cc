@@ -161,7 +161,10 @@ double sum(int arr[], int len) {
   }
   return sum;
 }
-
+//Abhishek
+double hypot(double a, double b) {
+	return sqrt(a*a + b*b);
+}
 bool isprime(int x){
   //isprime - Alex Palmisano
     for (int i = 2; i <= x/2; i++) {
