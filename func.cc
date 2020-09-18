@@ -10,6 +10,8 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
+
+//created by connor eggert
 int gcd(int min, int max) {
 	if (max == 0)
 		return min;
