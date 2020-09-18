@@ -37,13 +37,13 @@ int contPrimes(int x, int y){
       if (isNotPrime == false) {
 	if (x % i == 0) {
 	  isNotPrime = true;
-	  Primes++;
 	  cout <<"this number is NOT a prime : " << x << "\n";
 	  break;
 	}
       }
     }
     if (isNotPrime == false) {
+    	Primes++;
       cout << "this IS a prime number" : << x << "\n";
     }
   }
