@@ -71,9 +71,10 @@ void round(double array[], int size) {
 	}
 	
 }
-<<<<<<< HEAD
-	//created by sam noack
-int contPrimes(int x, int y){
+
+
+//These next two functions are created by sam noack
+int countPrimes(int x, int y){
   bool isNotPrime = false;
   int Primes = 0;
 
@@ -96,20 +97,56 @@ int contPrimes(int x, int y){
 return Primes;
 }
 
-int compact(int x[], int a, int b) {
-  for (int i = 1; i <= 10; i++) {
-    if (i + 1 >= a && i + 1 <= b) {
-      x[i] = 0;
-    }
-  }
-  for (int i = 0; i <= 9; i++) {
-    if (x[i] == 0) {
-    }
-    else {
-      cout << x[i] << " - ";
-      }
-  }
-  return 0;
+double *compact(int x[], int a, int b, int len) { //I'm not sure if this function is really optimal, but after a lot of playing around it does work in my visual studio
+	bool isDeleting = false;    //this is basically to help me logically determine when to start and stop counting length of the new array
+	double lengthCounter = 0;   //this stores the length of the new array
+
+	for (int i = 1; i <= len; i++) { // this for loop runs through the old array and determines how MANY elements will be in the new array
+		if (isDeleting == false) {
+			if (x[i] == a) {
+				isDeleting = true;
+			}
+			else {
+				lengthCounter++;
+			}
+		}
+		else {
+			if (x[i] == b) {
+				isDeleting = false;
+			}
+		}
+	}
+
+		double* newArr = new double[lengthCounter]; //the new array :)
+		int temp = 0;
+
+		isDeleting = false;
+		for (int i = 0; i <= len - 1; i++) { //this for loop is basically the same as the last one, but this time it takes the relevant elements from the old array 
+							//and assigns them to the new one.
+			if (isDeleting == false) {
+				if (x[i] == a) {
+					isDeleting = true;
+				}
+				else {
+					newArr[temp] = x[i];
+					temp++;
+				}
+			}
+			else {
+				if (x[i] == b) {
+					isDeleting = false;
+				}
+			}
+		}
+			
+			for (int i = 0; i <= lengthCounter - 1; i++) { //this is just for testing purposes, can be removed but I needed this in visual studio to see if it worked
+				cout << newArr[i] << " - ";
+			}
+
+			return newArr;
+}
+
+
 =======
     /*
  * Created by Amein Almoughrabi
