@@ -11,7 +11,57 @@
 #include <vector>
 using namespace std;
 
+<<<<<<< HEAD
 // created by connor eggert
+=======
+//created by Enis Rama
+void reverse(int a[], int len){
+
+    int temp;
+    for (int i = 0; i < len / 2; i++) 
+    {
+      temp = a[len-i-1];
+      a[len-i-1] = a[i];
+      a[i] = temp;
+    }
+    for (int i = 0; i < len; i++)
+    {
+        cout << a[i] << " ";
+    }
+    cout << "\n";
+
+}
+
+//Created by Enis Rama
+void reverse(char a[]){
+
+    int len = strlen(a); //= sizeof(a)/sizeof(a[0]);
+    int temp;
+
+    for (int i = 0; i < len / 2; i++) 
+    {
+      temp = a[len-i-1];
+      a[len-i-1] = a[i];
+      a[i] = temp;
+    }
+
+}
+
+//Created by Enis Rama
+int diffsq(int a, int b){
+
+    int r1, r2, diffsq;
+    r1 = pow(a, 2);
+    r2 = pow(b, 2);
+    diffsq = r1 - r2;
+    
+    return diffsq;
+}
+    
+
+
+//created by connor eggert
+>>>>>>> e3bbcebb9759458a429b173f66aae858fc21c1e3
 int gcd(int min, int max) {
   if (max == 0) return min;
   return gcd(max, min % max);
@@ -22,8 +72,15 @@ void round(double array[], int size) {
     array[j] = round(array[j]);
   }
 }
+<<<<<<< HEAD
 // created by sam noack
 int countPrimes(int x, int y) {
+=======
+
+
+//These next two functions are created by sam noack
+int countPrimes(int x, int y){
+>>>>>>> e3bbcebb9759458a429b173f66aae858fc21c1e3
   bool isNotPrime = false;
   int Primes = 0;
 
@@ -44,6 +101,7 @@ int countPrimes(int x, int y) {
   return Primes;
 }
 
+<<<<<<< HEAD
 int compact(int x[], int a, int b) {
   for (int i = 1; i <= 10; i++) {
     if (i + 1 >= a && i + 1 <= b) {
@@ -58,6 +116,111 @@ int compact(int x[], int a, int b) {
   }
   return 0;
 }
+=======
+double *compact(int x[], int a, int b, int len) { //I'm not sure if this function is really optimal, but after a lot of playing around it does work in my visual studio
+	bool isDeleting = false;    //this is basically to help me logically determine when to start and stop counting length of the new array
+	double lengthCounter = 0;   //this stores the length of the new array
+
+	for (int i = 1; i <= len; i++) { // this for loop runs through the old array and determines how MANY elements will be in the new array
+		if (isDeleting == false) {
+			if (x[i] == a) {
+				isDeleting = true;
+			}
+			else {
+				lengthCounter++;
+			}
+		}
+		else {
+			if (x[i] == b) {
+				isDeleting = false;
+			}
+		}
+	}
+
+		double* newArr = new double[lengthCounter]; //the new array :)
+		int temp = 0;
+
+		isDeleting = false;
+		for (int i = 0; i <= len - 1; i++) { //this for loop is basically the same as the last one, but this time it takes the relevant elements from the old array 
+							//and assigns them to the new one.
+			if (isDeleting == false) {
+				if (x[i] == a) {
+					isDeleting = true;
+				}
+				else {
+					newArr[temp] = x[i];
+					temp++;
+				}
+			}
+			else {
+				if (x[i] == b) {
+					isDeleting = false;
+				}
+			}
+		}
+			
+			for (int i = 0; i <= lengthCounter - 1; i++) { //this is just for testing purposes, can be removed but I needed this in visual studio to see if it worked
+				cout << newArr[i] << " - ";
+			}
+
+			return newArr;
+}
+
+
+=======
+    /*
+ * Created by Amein Almoughrabi
+ */
+double hypot(int A, int B){
+
+    int temp;
+
+    temp = (A * A) + (B * B);
+    return sqrt ( temp );
+    
+}
+int main()
+{
+    
+
+    cout << "hypot(3,4)=" << hypot(3, 4) << '\n';
+    cout << "hypot(4,5)=" << hypot(4, 5) << '\n';
+}
+
+    
+/*
+ * Created by Amein Almoughrabi
+ */
+
+
+double dist(int xone, int yone, int xtwo, int ytwo){
+    int a = xtwo-xone;
+    int b = ytwo-yone;
+    a=a;
+    b*=b;
+    int c = a+b;
+    return sqrt(c);
+}
+
+
+double perimeter(int x1, int y1, int x2, int y2,int x3, int y3){
+    double dis1 = dist(x1, y1, x2, y2);
+    double dis2 = dist(x2, y2, x3, y3);
+    double dis3 = dist(x1, y1, x3, y3);
+ 
+    return dis1+dis2+dis3;
+}
+
+
+int main()
+{
+    cout << "perimeter of tri= " << perimeter(0, 0, 3, 0, 3, 3) << '\n';
+    return 0;
+}
+
+
+========
+>>>>>>> e3bbcebb9759458a429b173f66aae858fc21c1e3
 // 9.18.2020 Isaac Kupferschmid
 // aided by https://www.geeksforgeeks.org/count-number-even-odd-elements-array/
 int countEvens(int arr[], int arr_size) {
@@ -119,15 +282,24 @@ double mean(int arr[], double len) {
   for (int i = 0; i < len; i++) sum += arr[i];
   return sum / len;
 }
-
+/*
+ * Benjamin Mirisola
+ */
 int prod(int a, int b) {
   int product = 1;
   for (int i = a; i <= b; i++) {
     product *= i;
   }
   return product;
+<<<<<<< HEAD
 }
+=======
+>>>>>>> e3bbcebb9759458a429b173f66aae858fc21c1e3
 
+}
+/*
+ * Benjamin Mirisola
+ */
 int max(int arr[], double len) {
   int max = 0;
   for (int i = 0; i < len; i++) {
