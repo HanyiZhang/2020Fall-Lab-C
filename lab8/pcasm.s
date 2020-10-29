@@ -1,4 +1,4 @@
-.globl _Z2a1j
+        .globl _Z2a1j
 _Z2a1j:
 	.cfi_startproc
 	endbr64
