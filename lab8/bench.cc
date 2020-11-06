@@ -11,19 +11,19 @@ You must write these 5 functions in assembler elsewhere and link them in
 */
 
 // write this in assembler! count from 0 to n-1
-uint32_t a1(uint32_t n);
+//uint32_t a1(uint32_t n);
 
 // write this in assembler! count from n down to 0
-uint32_t a2(uint32_t n);
+//uint32_t a2(uint32_t n);
 
 // write this in assembler! Read the first element of the array n times
-uint32_t readOneLocation(uint32_t a[], int n);
+//uint32_t readOneLocation(uint32_t a[], int n);
 
 // write this in assembler! Read the entire array of n elements                 
 uint32_t readArray(uint32_t a[], int n);
                                                                                 
 // write this in assembler! Write zero to the entire array of n elements        
-uint32_t writeArray(uint32_t a[], int n);
+//uint32_t writeArray(uint32_t a[], int n);
                                            
 
 
@@ -261,9 +261,9 @@ int main() {
 	// to get meaningful results on on the pi. You might need more on PC
 	const uint32_t iter = 200; // iterations per trial
 
-	benchmark2("readOneLocation", readOneLocation, narray, iter, numTrials);
-	benchmark2("readArray", readArray, narray, iter, numTrials);
-	benchmark2("writeArray", writeArray, narray, iter, numTrials);
+	//	benchmark2("readOneLocation", readOneLocation, narray, iter, numTrials);
+	//	benchmark2("readArray", readArray, narray, iter, numTrials);
+	//	benchmark2("writeArray", writeArray, narray, iter, numTrials);
 	benchmark2("array1", array1, narray, iter, numTrials);
 	benchmark2("array2", array2, narray, iter, numTrials);
 
