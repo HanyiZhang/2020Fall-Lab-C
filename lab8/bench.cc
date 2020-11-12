@@ -5,25 +5,26 @@
 using namespace std;
 
 void f();
+void f(int,int,int,int,int);
 
 /*
 You must write these 5 functions in assembler elsewhere and link them in
 */
 
 // write this in assembler! count from 0 to n-1
-uint32_t a1(uint32_t n);
+//uint32_t a1(uint32_t n);
 
 // write this in assembler! count from n down to 0
-uint32_t a2(uint32_t n);
+//uint32_t a2(uint32_t n);
 
 // write this in assembler! Read the first element of the array n times
-uint32_t readOneLocation(uint32_t a[], int n);
+//uint32_t readOneLocation(uint32_t a[], int n);
 
 // write this in assembler! Read the entire array of n elements                 
 uint32_t readArray(uint32_t a[], int n);
                                                                                 
 // write this in assembler! Write zero to the entire array of n elements        
-uint32_t writeArray(uint32_t a[], int n);
+//uint32_t writeArray(uint32_t a[], int n);
                                            
 
 
@@ -33,6 +34,14 @@ uint32_t b1(uint32_t n) {
 		f();
 	return 0;
 }
+
+// count up and call function f n times
+uint32_t b1b(uint32_t n) {
+	for (int i = 0; i < n; i++)
+		f(i, 3, 5, 7, i);
+	return 0;
+}
+
 
 // count down and call function f n times
 uint32_t b2(uint32_t n) {
@@ -90,6 +99,32 @@ uint32_t b7(uint32_t n) {
 	return sum;
 }
 
+// double precision adding
+uint32_t b8(uint32_t n) {
+	double sum = 0;
+	for (double i = 1; i <= n; i++)
+		sum += i;
+	return uint32_t(sum);
+}
+
+// double precision multiply
+uint32_t b9(uint32_t n) {
+	double prod = 1;
+	for (double i = 0.999; n > 0; n--, i += 0.00001)
+		prod *= i;
+	return uint32_t(prod);
+}
+
+// double precision divide
+uint32_t b10(uint32_t n) {
+	double prod = 1;
+	for (double i = 0.999; n > 0; n--, i += 0.00001)
+		prod /= i;
+	return uint32_t(prod);
+}
+
+
+
 
 // sum the elements in the array
 uint64_t array1(const uint32_t x[], uint32_t n) {
@@ -101,7 +136,7 @@ uint64_t array1(const uint32_t x[], uint32_t n) {
 
 // sum the elements in the array backwards
 uint64_t array2(uint32_t x[], uint32_t n) {
-	uint64_t sum = x[0];
+	uint64_t sum = 0;
 	for (n--; n > 0; n--)
 		sum += x[n];
 	sum += x[0];
@@ -203,7 +238,7 @@ uint64_t array9(uint32_t x[], uint32_t n) {
 // repeat the test numTrials times, printing each time to check stability
 template<typename Func>
 void benchmark1(const char msg[], Func f, uint32_t n, uint32_t numTrials) {
-	for (uint32_t trials = 0; trials < 5; trials++) {
+	for (uint32_t trials = 0; trials < numTrials; trials++) {
 		clock_t t0 = clock();
 		uint64_t res = f(n);
 		clock_t t1 = clock();
@@ -247,6 +282,7 @@ int main() {
 	benchmark1("a1", a1, n, numTrials);     
   benchmark1("a2", a2, n, numTrials);
 	benchmark1("b1", b1, n, numTrials);
+	benchmark1("b1b", b1b, n, numTrials);
 	benchmark1("b2", b2, n, numTrials);
 	benchmark1("b3", b3, n, numTrials);
 	benchmark1("b3b", b3b, n, numTrials);
@@ -255,6 +291,11 @@ int main() {
 	benchmark1("b6", b6, n, numTrials);
 	benchmark1("b7", b7, n, numTrials);
 
+
+	benchmark1("b8", b8, n, numTrials);
+	benchmark1("b9", b9, n, numTrials);
+	benchmark1("b10", b10, n, numTrials);
+
 	// this is the size for array problems on the pi
 	const uint32_t narray = 40000000; // 40 million
 
@@ -262,9 +303,9 @@ int main() {
 	// to get meaningful results on on the pi. You might need more on PC
 	const uint32_t iter = 200; // iterations per trial
 
-	benchmark2("readOneLocation", readOneLocation, narray, iter, numTrials);
-	benchmark2("readArray", readArray, narray, iter, numTrials);
-	benchmark2("writeArray", writeArray, narray, iter, numTrials);
+	//	benchmark2("readOneLocation", readOneLocation, narray, iter, numTrials);
+	//	benchmark2("readArray", readArray, narray, iter, numTrials);
+	//	benchmark2("writeArray", writeArray, narray, iter, numTrials);
 	benchmark2("array1", array1, narray, iter, numTrials);
 	benchmark2("array2", array2, narray, iter, numTrials);
 
