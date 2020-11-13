@@ -147,6 +147,7 @@ uint64_t array2(uint32_t x[], uint32_t n) {
   write code to compute sum but not in sequential order
      read x[0], x[2], ... x[n-1]              first sum even elements
      then read x[1], x[3], ... x[n-1]         then sum odd elements
+
  */
 uint64_t array3(uint32_t x[], uint32_t n) {
 	uint64_t sum = 0;
