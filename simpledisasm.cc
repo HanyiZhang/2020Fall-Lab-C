@@ -56,7 +56,7 @@ void disasm(uint32_t instr) {
 	uint32_t rm = TODO;
 	const char sbit[] = ""; // placeholder. You do not have to support s-bit
 	cout << opCodeDataProcessing[opcode] << conditionCode[cond] << sbit <<
-		"   r" << rd << ", r" << rn << ", " << rm << '\n';	
+		"   r" << rd << ", r" << rn << ", r" << rm << '\n';	
 }
 
 
