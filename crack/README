@@ -17,3 +17,6 @@ You will have to identify the byte(s) in the program that must be changed, then 
 
 and an ARMv6 instruction manual: https://static.docs.arm.com/ddi0419/d/DDI0419D_armv6m_arm.pdf
 you will figure out what hex bytes to replace, and then replace them using hexedit.
+
+g++ -g patch.c -o patch
+./patch patch.txt a.out b.out
